@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CsvController;
+use App\Http\Controllers\CsvDataController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// todo route group with the auth middleware
-
-//Route::get('/dashboard', function () {
-//    return view('dashboard');
-//})->middleware(['auth'])->name('dashboard');
-
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', function () {
@@ -31,6 +26,8 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::resource('csvs', CsvController::class);
+    Route::get('csvs/{csv}/export', [CsvController::class, 'export'])->name('csvs.export'); // todo fix(?)
+    Route::resource('csvs/{csv}/data', CsvDataController::class); // todo fix name
 
 });
 
