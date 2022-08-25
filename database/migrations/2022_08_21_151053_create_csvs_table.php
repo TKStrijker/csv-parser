@@ -15,7 +15,7 @@ class CreateCsvsTable extends Migration
     {
         Schema::create('csvs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('user_id')->nullable(); // todo check if this should be nullable or if theres a workaround
+            $table->unsignedInteger('user_id')->nullable();
             $table->string('file_name', 255);
             $table->timestamps();
         });

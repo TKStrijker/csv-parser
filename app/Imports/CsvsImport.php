@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class CsvsImport implements ToModel, WithHeadingRow // todo sort use
+class CsvsImport implements ToModel, WithHeadingRow
 {
     private $csv_id;
 
@@ -22,7 +22,7 @@ class CsvsImport implements ToModel, WithHeadingRow // todo sort use
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
-    public function model(array $row) // todo translate headings // todo check if headings are even needed
+    public function model(array $row)
     {
         return new CsvData([
             'csv_id' => $this->csv_id,

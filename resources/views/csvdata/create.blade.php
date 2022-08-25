@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('csv data.create') }} <!-- todo translate -->
+            {{ ucfirst(trans('actions.csv data.create')) }}
         </h2>
     </x-slot>
 
@@ -13,9 +13,9 @@
                     <form method="post" action="{{ route('data.store', ['csv' => $csv]) }}">
                         @csrf
 
-                        <x-form-inputs.csv-data :csvData="$csvData"/>
+                        <x-form.csv-data-inputs :csvData="$csvData"/>
 
-                        <button>{{ __('save') }}</button> <!-- todo translate -->
+                        <button>{{ ucfirst(trans('actions.save')) }}</button>
                     </form>
                 </div>
             </div>

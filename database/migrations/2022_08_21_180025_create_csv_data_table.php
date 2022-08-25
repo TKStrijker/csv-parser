@@ -15,7 +15,7 @@ class CreateCsvDataTable extends Migration
     {
         Schema::create('csv_data', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('csv_id')->nullable(); // todo check if this should be nullable or if theres a workaround
+            $table->unsignedInteger('csv_id')->nullable();
             $table->year('year');
             $table->integer('week');
             $table->date('date');

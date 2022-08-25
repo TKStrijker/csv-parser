@@ -1,5 +1,5 @@
 <div class="mb-6">
-    <label for="date_input">{{ __('date') }}</label> <!-- todo translate -->
+    <label for="date_input">{{ ucfirst(trans_choice('nouns.date', 1)) }}</label>
     <input id="date_input" name="date" type="date"
            value="{{ old('date', $csvData->date) }}"/>
     <div class="text-red-600">
@@ -10,7 +10,7 @@
 </div>
 
 <div class="mb-6">
-    <label for="personal_number_input">{{ __('personal_number') }}</label> <!-- todo translate -->
+    <label for="personal_number_input">{{ ucfirst(trans_choice('nouns.personal number', 1)) }}</label>
     <input id="personal_number_input" name="personal_number" type="text"
            value="{{ old('personal_number', $csvData->personal_number) }}"/>
     <div class="text-red-600">
@@ -21,10 +21,9 @@
 </div>
 
 <div class="mb-6">
-    <label for="hours_input">{{ __('hours') }}</label> <!-- todo translate -->
+    <label for="hours_input">{{ ucfirst(trans_choice('nouns.hour', 2)) }}</label>
     <input id="hours_input" name="hours" type="number" step="0.01" lang="nl-nl"
            value="{{ old('hours', $csvData->hours / 60) }}"/>
-    <!-- todo way of parsing hours without directly modifying it? -->
     <div class="text-red-600">
         @if($errors->has('hours'))
             {{ $errors->first('hours') }}
@@ -33,7 +32,7 @@
 </div>
 
 <div class="mb-6">
-    <label for="hour_code_input">{{ __('hour_code') }}</label> <!-- todo translate -->
+    <label for="hour_code_input">{{ ucfirst(trans_choice('hour code', 1)) }}</label>
     <input id="hour_code_input" name="hour_code" type="text"
            value="{{ old('hour_code', $csvData->hour_code) }}"/>
     <div class="text-red-600">

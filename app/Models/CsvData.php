@@ -9,8 +9,6 @@ class CsvData extends Model
 {
     use HasFactory;
 
-    // todo refactor the csv_id thing(?)
-
     protected $fillable = [
         'csv_id',
         'year',
@@ -20,8 +18,6 @@ class CsvData extends Model
         'hours',
         'hour_code',
     ];
-
-    // todo cast date as a date(?)
 
     public function csv()
     {

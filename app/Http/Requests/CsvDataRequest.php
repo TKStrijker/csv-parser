@@ -21,7 +21,7 @@ class CsvDataRequest extends FormRequest
      *
      * @return array
      */
-    public function rules() // todo expand(?)
+    public function rules()
     {
         return [
             'date' => 'required|date',

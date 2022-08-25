@@ -22,7 +22,7 @@ class CsvRequest extends FormRequest
      *
      * @return array
      */
-    public function rules() // todo translate errors
+    public function rules()
     {
         return [
             'file_name' => 'required|string|max:255',

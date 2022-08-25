@@ -1,3 +1,3 @@
 <div>
-    {{ __('hours') }}: {{ $time }}
+    {{ ucfirst(trans_choice('nouns.hour', 2)) }}: {{ $time }}
 </div>

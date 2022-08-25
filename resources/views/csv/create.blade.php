@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('csv.create') }} <!-- todo translate -->
+            {{ ucfirst(trans('actions.csv.create')) }}
         </h2>
     </x-slot>
 
@@ -13,8 +13,6 @@
                         @csrf
 
                         <x-form.csv-inputs :csv="$csv"/>
-
-                        <button>{{ __('save') }}</button> <!-- todo translate -->
 
                     </form>
                 </div>

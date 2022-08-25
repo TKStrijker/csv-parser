@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Csv extends Model // todo read up on model conventions
+class Csv extends Model
 {
     use HasFactory;
 
@@ -16,7 +16,7 @@ class Csv extends Model // todo read up on model conventions
     public static function boot() {
         parent::boot();
 
-        static::deleting(function($csv) { // todo delete all associated CsvData
+        static::deleting(function($csv) {
             $csv->data()->delete();
         });
     }
@@ -26,7 +26,7 @@ class Csv extends Model // todo read up on model conventions
         return $this->belongsTo(User::class);
     }
 
-    public function data() // todo rename
+    public function data()
     {
         return $this->hasMany(CsvData::class);
     }
