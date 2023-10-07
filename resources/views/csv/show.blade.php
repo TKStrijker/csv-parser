@@ -5,16 +5,16 @@
         </h2>
 
         <div>
-            <a href="{{ route('csvs.export', $csv) }}">
+            <a href="{{ route('csvs/export', [$csv->id]) }}">
                 {{ ucfirst(trans('actions.export')) }}
             </a>
         </div>
 
-        <a href="{{ route('csvs.edit', $csv) }}">
+        <a href="{{ route('csvs/edit', [$csv->id]) }}">
             {{ ucfirst(trans('actions.edit')) }}
         </a>
 
-        <form action="{{ route('csvs.destroy', $csv) }}" method="POST">
+        <form action="{{ route('csvs/delete', [$csv->id]) }}" method="POST">
             @csrf
             @method('DELETE')
 
@@ -29,12 +29,12 @@
                 <a href="{{ route('data.create', $csv) }}" class="text-xl">
                     {{ ucfirst(trans('actions.create')) }}
                 </a>
-                <x-results-counter :resource="$csvData"/>
+                <x-results-counter :resource="$csv->data"/>
             </div>
         </div>
     </div>
 
-    @foreach($csvData as $data)
+    @foreach($csv->data as $data)
         <div class="py-4">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">

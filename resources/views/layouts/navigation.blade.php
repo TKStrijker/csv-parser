@@ -15,7 +15,7 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ ucfirst(trans('app.dashboard')) }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('csvs.index') }}" :active="request()->routeIs(['csvs.*', 'data.*'])">
+                    <x-nav-link :href="route('csvs/index')" :active="request()->routeIs(['csvs/*', 'data/*'])">
                         {{ ucfirst(trans_choice('nouns.csv', 2)) }}
                     </x-nav-link>
                 </div>

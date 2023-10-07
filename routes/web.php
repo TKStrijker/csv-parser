@@ -25,9 +25,7 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('csvs', CsvController::class);
-    Route::get('csvs/{csv}/export', [CsvController::class, 'export'])->name('csvs.export'); // todo fix(?)
-    Route::resource('csvs/{csv}/data', CsvDataController::class); // todo fix name
+    Route::resource('csvs/{csv}/data', CsvDataController::class);
 
 });
 

@@ -9,6 +9,10 @@ class Csv extends Model
 {
     use HasFactory;
 
+    protected $relations = [
+        'data',
+    ];
+
     protected $fillable = [
         'file_name',
     ];
