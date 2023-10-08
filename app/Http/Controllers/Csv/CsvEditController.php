@@ -15,7 +15,7 @@ class CsvEditController extends Controller
      */
     public function edit(Request $request, int $id)
     {
-        $csv = Csv::find(1);
+        $csv = Csv::find($id);
 
         $this->authorize('update', $csv);
 
