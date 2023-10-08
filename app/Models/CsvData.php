@@ -9,6 +9,10 @@ class CsvData extends Model
 {
     use HasFactory;
 
+    protected $relations = [
+        'csv',
+    ];
+
     protected $fillable = [
         'csv_id',
         'year',

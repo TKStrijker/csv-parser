@@ -10,7 +10,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <form method="post" action="{{ route('data.store', ['csv' => $csv]) }}">
+                    <form method="post" action="{{ route('csvs/data/store', $csv->id) }}">
                         @csrf
 
                         <x-form.csv-data-inputs :csvData="$csvData"/>

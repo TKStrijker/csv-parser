@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\CsvController;
-use App\Http\Controllers\CsvDataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,13 +18,9 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-
-    Route::resource('csvs/{csv}/data', CsvDataController::class);
-
 });
 
 require __DIR__.'/auth.php';
