@@ -15,8 +15,9 @@ class CsvShowController extends Controller
      */
     public function show(Request $request, int $id)
     {
-        $csv = Csv::with('data')
-            ->find($id);
+        $csv = Csv::with([
+            'data' => fn ($query) => $query->orderBy('date', 'desc')
+        ])->findOrFail($id);
 
         $this->authorize('view', $csv);
 

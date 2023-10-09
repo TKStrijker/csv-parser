@@ -15,7 +15,7 @@ class CsvUpdateController extends Controller
      */
     public function update(CsvRequest $request, int $id)
     {
-        $csv = Csv::find($id);
+        $csv = Csv::findOrFail($id);
 
         $this->authorize('update', $csv);
 

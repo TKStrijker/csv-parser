@@ -16,7 +16,7 @@ class CsvExportController extends Controller
      */
     public function export(Request $request, int $id)
     {
-        $csv = Csv::find($id);
+        $csv = Csv::findOrFail($id);
 
         $this->authorize('export', $csv);
 

@@ -15,9 +15,11 @@ class CsvDeleteController extends Controller
      */
     public function delete(Request $request, int $id)
     {
-        $csv = Csv::find($id);
+        $csv = Csv::findOrFail($id);
 
         $this->authorize('delete', $csv);
+
+        // delete all related CsvData models, check if this should be done before or after
 
         $csv->delete();
 

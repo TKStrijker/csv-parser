@@ -20,9 +20,7 @@ class CsvStoreController extends Controller
         $this->authorize('create', $csv = new Csv());
 
         $csv->fill($request->validated());
-        $csv->save();
-
-        $csv->user()->associate(auth()->user());
+        $csv->user_id = $request->user()->id;
         $csv->save();
 
         Excel::import(new CsvsImport($csv->id), $request->validated()['file']);
