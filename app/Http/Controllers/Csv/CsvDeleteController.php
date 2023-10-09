@@ -19,8 +19,6 @@ class CsvDeleteController extends Controller
 
         $this->authorize('delete', $csv);
 
-        // delete all related CsvData models, check if this should be done before or after
-
         $csv->delete();
 
         return redirect()->route('csvs/index');
